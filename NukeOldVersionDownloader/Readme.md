@@ -3,7 +3,7 @@ Nuke Old Version Downloader
 >[Deprecated] 
 >The Foundry has changed how they store things on their amazon server and this is no longer working.
 
-[![](http://i.imgur.com/h6cuq4H.png)](http://ahuge.github.io/Bookmarklets/)
+[![](Get the bookmark here!)](http://ahuge.github.io/Bookmarklets/)
 
 The Nuke Old Version Downloader is a tool that would allow you to download previous releases binaries for [The Foundry's](https://www.thefoundry.co.uk/) products.
 
