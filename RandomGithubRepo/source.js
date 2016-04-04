@@ -4,10 +4,10 @@ function httpGetAsync(theUrl, cb)
     xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {cb(xmlHttp)};
     xmlHttp.open( "GET", theUrl, true );
-	if (typeof authentication !== "undefined")
-	{
-		xmlHttp.setRequestHeader("Authorization", "Basic " + btoa(authentication));
-	}
+    if (typeof authentication !== "undefined")
+    {
+        xmlHttp.setRequestHeader("Authorization", "Basic " + btoa(authentication));
+    }
     xmlHttp.send( null );
 }
 
@@ -62,7 +62,7 @@ function getUserStars(xmlHttp)
     else
     {
       var info = JSON.parse( xmlHttp.responseText );
-			if (info.length)
+            if (info.length)
       {
       var index = Math.floor(Math.random() * info.length);
       var element = info[index];
