@@ -11,7 +11,7 @@ The Random Github Repo bookmarklet will choose a random GitHub user and look thr
 
 ----------
 
-How to use a bookmarklet?
+Special Considerations?
 -------------
 > ***It is recommended that for this bookmarklet you aquire an api token and modify the "authentication" var at the top of the js file.***
 You will need to go to https://github.com/settings/tokens and generate yourself a new script token.
