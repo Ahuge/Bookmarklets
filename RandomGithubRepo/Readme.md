@@ -1,8 +1,5 @@
 Random Github Repo
 ===================
->[Deprecated] 
->The Foundry has changed how they store things on their amazon server and this is no longer working.
-
 [![](http://i.imgur.com/h6cuq4H.png)](http://ahuge.github.io/Bookmarklets/RandomGithubRepo)
 ###<a href="http://ahuge.github.io/Bookmarklets/RandomGithubRepo">Get the bookmark here!</a>
 
