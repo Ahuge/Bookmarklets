@@ -1,4 +1,8 @@
 var authentication = undefined;
+var page = 1;
+var terms = "";
+var language = "";
+
 function httpGetAsync(theUrl, cb)
 {
     xmlHttp = new XMLHttpRequest();
@@ -12,22 +16,31 @@ function httpGetAsync(theUrl, cb)
 }
 
 function remove_all(html, head, body) {
-    html.removeChild(head);
-    html.removeChild(body);
+    try {
+        html.removeChild(head);
+        html.removeChild(body);
+    }
+    catch(err) {
+        console.log("Failed Removing, things may look broken");
+    }
 }
 
 function create_head(html) {
   var html_head = "a {transition: color .4s;color: #265C83;} a:link, a:visited { color: #265C83; } a:hover   { color: #7FDBFF; } a:active  { transition: color .3s; color: #007BE6;} .link { text-decoration: none; } h1, h2 { display: inline;}";
   var head = document.createElement("head");
   var style = document.createElement("style");
+  var script = document.createElement("script");
   head.appendChild(style);
   style.innerHTML = html_head;
+    
+  script.innerHTML = document.currentScript;
   html.appendChild(head);
   
 }
 
 function create_body(html, response) {
   var body = document.createElement("body");
+  var repo_list = [];
   for (var i=0; i<response.items.length; ++i)
   {
     var repo = response.items[i];
@@ -54,10 +67,36 @@ function create_body(html, response) {
     div.appendChild(d);
     div.appendChild(h2);
     
-    console.log(div);
+    repo_list.push(repo.name);
     body.appendChild(div);
   };
+  var paged = document.createElement("div");
+  var nextb = document.createElement("button");
+  var prevb = document.createElement("button");
+
+  nextb.onclick = forward;
+  nextb.innerHTML = "Next Page";
+  prevb.onclick = backward;
+  prevb.innerHTML = "Previous Page";
+  paged.appendChild(prevb);
+  paged.appendChild(nextb);
+
+  body.appendChild(paged);
   html.appendChild(body);
+  console.log("Repos found: " + repo_list);
+  console.log("Page is " + page);
+  console.log("Terms are " + terms);
+  console.log("Language is " + language);
+}
+
+function backward() {
+    page -= 1;
+    get_values();
+}
+
+function forward() {
+    page += 1;
+    get_values();
 }
 
 function generate_result(xmlhttp) {
@@ -74,13 +113,20 @@ function generate_result(xmlhttp) {
 }
 
 function get_values() {
-    var terms = escape(prompt("Search Terms", "Autodesk Maya"));
-    var language = prompt("Language", "python");
-    if (language !== "") {
-      httpGetAsync("https://api.github.com/search/repositories?q=" + terms + "+language:" + language + "&sort=stars&order=desc", generate_result);
+    if (terms === "") {
+        terms = escape(prompt("Search Terms", "Autodesk Maya"));
+    }
+    if (language === "") {
+        language = prompt("Language", "python");
+        if (language === "") {
+            language = "None";
+        }
+    }
+    if (language !== "None") {
+      httpGetAsync("https://api.github.com/search/repositories?q=" + terms + "+language:" + language + "&sort=stars&order=desc&page=" + page + "&per_page=100", generate_result);
     }
     else {
-      httpGetAsync("https://api.github.com/search/repositories?q=" + terms + "&sort=stars&order=desc", generate_result);
+      httpGetAsync("https://api.github.com/search/repositories?q=" + terms + "&sort=stars&order=desc&page=" + page + "&per_page=100", generate_result);
     }
 }
 
