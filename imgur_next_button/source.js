@@ -60,7 +60,7 @@ function pop() {
     document.getElementById("topbar").appendChild(prev_button);
     document.getElementById("topbar").appendChild(next_button);
     next_button.style["margin-top"] = "9px";
-    next_button.style["padding-top"] = "9px";
+    next_button.style["padding-top"] = "7px";
     next_button.style["height"] = "32px";
 
     prev_button.style["margin-left"] = "10px";
