@@ -8,7 +8,7 @@ It will edit the top bar, so that it stays fixed to the top of the screen.
 It will add some code so that when you scroll and the next button goes out of frame, it will pop the button up on the topbar, and will put it back when it scrolls back into frame.
 
 ----------
-An example can be seen below:
+An interactive example can be seen on <b><a href="http://codepen.io/Ahuge/pen/ygBxdv">CodePen</a></b>, and a video demonstration can be seen below:
 
 [![Imgur Next Button](https://img.youtube.com/vi/JLILQuCTzNY/0.jpg)](https://www.youtube.com/watch?v=JLILQuCTzNY)
 
