@@ -1,4 +1,4 @@
-Random Github Repo
+Imgur Next Button
 ===================
 [![](http://i.imgur.com/h6cuq4H.png)](http://ahuge.github.io/Bookmarklets/imgur_next_button)
 ###<a href="http://ahuge.github.io/Bookmarklets/imgur_next_button">Get the bookmark here!</a>
