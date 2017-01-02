@@ -27,6 +27,7 @@ function pop() {
   */
   var next_button_container = document.getElementsByClassName("next-prev")[0];
   var next_button = document.getElementsByClassName("navNext")[0];
+  var prev_button = document.getElementsByClassName("navPrev")[0];
   var view_state = isElementInView(next_button_container);
 
   if (view_state != global_popped_state) {
@@ -37,23 +38,36 @@ function pop() {
     if (DEBUG_LEVEL >= 1) {
       console.log("Moving element back to container. Resetting style values");
     }
+    next_button_container.appendChild(prev_button);
     next_button_container.appendChild(next_button);
     // Values hard coded because I didn't want to deal with cross browser compat.
-    next_button.style["margin-left"] = "";
     next_button.style["margin-top"] = "";
     next_button.style["padding-top"] = "10px";
     next_button.style["height"] = "36px";
+    next_button_container.appendChild(next_button);
+
+    prev_button.style["margin-left"] = "";
+    prev_button.style["margin-top"] = "";
+    prev_button.style["margin-right"] = "5px";
+    prev_button.style["padding-top"] = "10px";
+    prev_button.style["height"] = "36px";
     global_popped_state = false;
   }
   else {
     if (DEBUG_LEVEL >= 1) {
       console.log("Moving element top topbar. Setting style values to make it look nice");
     }
+    document.getElementById("topbar").appendChild(prev_button);
     document.getElementById("topbar").appendChild(next_button);
-    next_button.style["margin-left"] = "10px";
     next_button.style["margin-top"] = "9px";
     next_button.style["padding-top"] = "9px";
     next_button.style["height"] = "32px";
+
+    prev_button.style["margin-left"] = "10px";
+    prev_button.style["margin-right"] = "5px";
+    prev_button.style["margin-top"] = "9px";
+    prev_button.style["padding-top"] = "9px";
+    prev_button.style["height"] = "32px";
     global_popped_state = true;
   }
 };
