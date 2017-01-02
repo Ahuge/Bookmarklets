@@ -1,8 +1,8 @@
 Search Github Repo
 ===================
 
-[![](http://i.imgur.com/h6cuq4H.png)](http://ahuge.github.io/Bookmarklets/RandomGithubRepo)
-###<a href="http://ahuge.github.io/Bookmarklets/RandomGithubRepo">Get the bookmark here!</a>
+[![](http://i.imgur.com/h6cuq4H.png)](http://ahuge.github.io/Bookmarklets/SearchGithubRepo)
+###<a href="http://ahuge.github.io/Bookmarklets/SearchGithubRepo">Get the bookmark here!</a>
 
 The Search Github Repo bookmarklet will ask you for a search term and a language, both are optional but you must supply at least one of them.
 
