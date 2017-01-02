@@ -7,6 +7,10 @@ The Imgur Next Button bookmarklet will edit an imgur page and do two edits for y
 It will edit the top bar, so that it stays fixed to the top of the screen.
 It will add some code so that when you scroll and the next button goes out of frame, it will pop the button up on the topbar, and will put it back when it scrolls back into frame.
 
+----------
+An example can be seen below:
+
+[![Imgur Next Button](https://img.youtube.com/vi/JLILQuCTzNY/0.jpg)](https://www.youtube.com/watch?v=JLILQuCTzNY)
 
 ----------
 
